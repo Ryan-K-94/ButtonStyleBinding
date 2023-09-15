@@ -14,7 +14,7 @@ namespace ButtonStyleBinding.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {
-    private Matrix matrix;
+    private Matrix matrix = new Matrix();
 
     public Matrix PatchMatrix
     {
@@ -27,7 +27,7 @@ public class MainViewModel : ViewModelBase
         CreateMatrix();
     }
 
-    private async void CreateMatrix()
+    private void CreateMatrix()
     {
         PatchMatrix = CreateMatrixColumn(4, 4);
     }
