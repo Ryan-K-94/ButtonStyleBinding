@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ButtonStyleBinding", "ButtonStyleBinding\ButtonStyleBinding.csproj", "{0161355B-8E42-4B09-848D-160C465940B3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ButtonStyleBinding.Desktop", "ButtonStyleBinding.Desktop\ButtonStyleBinding.Desktop.csproj", "{5BE3EEBC-6F29-40FB-A150-E9E5DE738C1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0161355B-8E42-4B09-848D-160C465940B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0161355B-8E42-4B09-848D-160C465940B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0161355B-8E42-4B09-848D-160C465940B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0161355B-8E42-4B09-848D-160C465940B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE3EEBC-6F29-40FB-A150-E9E5DE738C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE3EEBC-6F29-40FB-A150-E9E5DE738C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BE3EEBC-6F29-40FB-A150-E9E5DE738C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE3EEBC-6F29-40FB-A150-E9E5DE738C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3519D75-FE9D-495A-A961-1C5BE78C8996}
+	EndGlobalSection
+EndGlobal

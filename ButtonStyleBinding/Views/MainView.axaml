@@ -1,0 +1,65 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ButtonStyleBinding.ViewModels"
+			 xmlns:local="clr-namespace:ButtonStyleBinding.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ButtonStyleBinding.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+	<UserControl.Resources>
+		<local:MatrixToggleBtnColourConverter x:Key="matrixToggleBtnColourConverter"/>
+	</UserControl.Resources>
+
+	<Panel>
+		<ExperimentalAcrylicBorder IsHitTestVisible="False">
+			<ExperimentalAcrylicBorder.Material>
+				<ExperimentalAcrylicMaterial
+					BackgroundSource="Digger"
+					TintColor="#1f1f1f"
+					TintOpacity="1"
+					MaterialOpacity="1" />
+			</ExperimentalAcrylicBorder.Material>
+		</ExperimentalAcrylicBorder>
+
+		<!-- Matrix Grid-->
+		<ItemsControl Grid.Row="2" Name="GridItem0" HorizontalAlignment="Center" VerticalAlignment="Center"
+					  ItemsSource="{Binding PatchMatrix.Column, Mode=TwoWay}" 
+					  ItemTemplate="{DynamicResource DataTemplate_Level1}"/>
+
+	</Panel>
+
+	<!-- Patch Matrix Data Template -->
+	<UserControl.Resources>
+		<DataTemplate x:CompileBindings="False" x:Key="DataTemplate_Level1">
+			<ItemsControl ItemsSource="{Binding}" ItemTemplate="{DynamicResource DataTemplate_Level2}">
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<StackPanel Orientation="Horizontal"/>
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
+			</ItemsControl>
+		</DataTemplate>
+		
+		<DataTemplate x:Key="DataTemplate_Level2">
+			<ToggleButton Name="MatrixButton" HorizontalContentAlignment="Center" 
+						  VerticalContentAlignment="Center" FontSize="8" Padding="0" 
+						  Height="27" Width="27" Margin="1,1,1,1" Background="Gray">
+
+				<ToggleButton.Styles>
+					<Style Selector="ToggleButton:checked /template/ ContentPresenter#PART_ContentPresenter">
+						<Setter Property="Background" Value="{ReflectionBinding IsAssignedTooInOut, Converter={StaticResource matrixToggleBtnColourConverter}}"/>
+						<!--<Setter Property="Background" Value="Red"/>-->
+						<Setter Property="Opacity" Value="0.8" />
+					</Style>
+				</ToggleButton.Styles>
+			</ToggleButton>
+		</DataTemplate>
+	</UserControl.Resources>
+</UserControl>
